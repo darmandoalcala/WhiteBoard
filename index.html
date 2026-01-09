@@ -3,74 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard GP Mobility - Enero 2026</title>
+    <title>Portal GP Mobility | Inicio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles_root.css">
+    <link rel="stylesheet" href="styles/styles_index.css">
 </head>
 <body>
+    <div class="hero-video-container">
+        
+        <video autoplay muted loop playsinline class="back-video">
+            <source src="assets/video_fondo.mp4" type="video/mp4">
+        </video>
+        
+        <div class="overlay"></div>
 
-<div class="container">
-    <section class="board-section">
-        <div class="section-header">
-                <h2>
-                <span class="logo-container">
-                    <img src="img/logo_gp.png" alt="GP Mobility Logo" class="logo-img">
-                    Whiteboard
-                </span>
-            </h2>
-            <button class="add-note-btn" onclick="window.openModal()">+ Nueva Nota</button>
-        </div>
-        <div class="board-grid" id="board">
-            <p style="color:#9ca3af; grid-column: 1/-1;">Cargando notas...</p>
-        </div>
-    </section>
-
-    <section class="calendar-section">
-        <div class="cal-top">
-            <div class="cal-month">Enero</div>
-            <div class="cal-quote">
-                “Todo tiene su momento,<br>
-                y cada cosa su tiempo bajo el cielo.”<br>
-                — Eclesiastés 3,1
+        <div class="hero-grid">
+            
+            <div class="hero-logo">
+                <img src="img/logo_gp.png" alt="GP Mobility Badge" class="big-badge">
             </div>
-            <div style="display:flex; align-items:center; gap:20px;">
-                <div class="cal-year">2026</div>
-                <div class="cal-logo">
-                    <i class="fas fa-leaf" style="color:#2563eb;"></i> GP <span style="font-size:0.8rem; display:block; line-height:10px;">MOBILITY</span>
-                </div>
+
+            <div class="hero-text-col">
+                <h1>Bienvenido/a a este espacio creado para ti.</h1>
+                <h3>En GP Mobility creemos que juntos movemos vidas.</h3>
+                
+                <p>
+                    Esta página nace para que todas y todos los colaboradores tengan un acceso fácil a lo que sucede dentro de nuestra empresa.
+                    <br><br> Un espacio hecho para fortalecer la comunicación, vivir con transparencia y mantenernos siempre en movimiento.
+                </p>
             </div>
-        </div>
-
-        <div class="cal-grid">
-            <div class="cal-header-cell">Domingo</div>
-            <div class="cal-header-cell">Lunes</div>
-            <div class="cal-header-cell">Martes</div>
-            <div class="cal-header-cell">Miércoles</div>
-            <div class="cal-header-cell">Jueves</div>
-            <div class="cal-header-cell">Viernes</div>
-            <div class="cal-header-cell">Sábado</div>
-        </div>
-        <div class="cal-grid" id="calendar-body" style="border-top:none;"></div>
-    </section>
-</div>
-
-<div class="floating-actions">
-    <button class="fab fab-alert" onclick="alert('Ventana de reporte')" title="Reportar Queja"><i class="fas fa-exclamation-triangle"></i></button>
-    <button class="fab fab-support" onclick="alert('Ventana de soporte')" title="Soporte Técnico"><i class="fas fa-headset"></i></button>
-</div>
-
-<div id="noteModal" class="modal">
-    <div class="modal-content">
-        <h4>Nueva Nota</h4>
-        <textarea id="newNote" rows="4" style="width:100%; border:1px solid #ccc; padding:5px;"></textarea>
-        <div style="display:flex; gap:10px;">
-            <button onclick="window.addPostIt()" class="add-note-btn" style="flex:1;">Agregar</button>
-            <button onclick="window.closeModal()" class="add-note-btn" style="background:#ef4444; flex:1;">Cancelar</button>
         </div>
     </div>
-</div>
 
-<script type="module" src="script.js"></script>
+    <main class="dashboard-container">
+        
+        <section class="welcome-section">
+            <h1>Descubre más sobre...</h1>
+        </section>
 
+        <div class="modules-grid">
+            
+            <a href="whiteboard.html" class="module-card card-board">
+                <div class="icon-box"><i class="fas fa-columns"></i></div>
+                <div>
+                    <div class="module-title">Whiteboard & Calendario</div>
+                </div>
+            </a>
+
+            <a href="https://gp-sistemas.vercel.app/" class="module-card">
+                <div class="icon-box"><i class="fas fa-boxes"></i></div>
+                <div>
+                    <div class="module-title">Inventario</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+<script src="component.js"></script>
 </body>
 </html>
