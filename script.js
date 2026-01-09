@@ -175,7 +175,7 @@ onSnapshot(q, (snapshot) => {
         
         // El icono de borrar llama a window.deleteNote
         postIt.innerHTML = `
-            <i class="fas fa-times delete-note" onclick="window.deleteNote('${id}')"></i>
+            <i class="fas fa-times delete-note" onclick="window.deletePostIt('${id}')"></i>
             <div class="post-it-content">${data.text}</div>
         `;
         board.appendChild(postIt);

@@ -48,3 +48,22 @@ body{background-color:var(--bg);color:var(--text-dark);padding:20px;}
 .cal-month,.cal-year{font-size:2.5rem;}
 .cal-cell{min-height:80px;font-size:0.7rem;}
 }
+
+/* RESPONSIVE FIX: Calendario movil con scroll */
+@media (max-width: 768px) {
+    .calendar-section {
+        padding: 10px; /* Menos padding */
+        overflow-x: auto; /* Scroll */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cal-grid {
+        min-width: 800px; /* Ancho mínimo para evitar que se comprima de más */
+    }
+    
+    .cal-top{flex-direction:column;align-items:center;text-align:center;}
+    .cal-month{font-size:2.5rem;}
+    .cal-year{font-size:2rem;}
+    .cal-logo{margin-top:10px;}
+
+}
