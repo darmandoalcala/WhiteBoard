@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="index.html" class="nav-link">Inicio</a>
             <span class="nav-separator">|</span>
             
-            <a href="#" class="nav-link">Nuestra Esencia</a>
+            <a href="nuestra_esencia.html" class="nav-link">Nuestra Esencia</a>
             <span class="nav-separator">|</span>
             
             <a href="#" class="nav-link">Somos Cultura, Somos Talento</a>
