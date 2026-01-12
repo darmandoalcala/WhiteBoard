@@ -1,101 +1,70 @@
-/* Dashboard */
-.dashboard-container{max-width:1200px;margin:0 auto;padding:0 20px 40px 20px;}
-/* Container */
-.welcome-section{margin-bottom:2rem;}
-.welcome-section h1{font-size:2rem;color:var(--text-main);margin-bottom:0.5rem;}
-.welcome-section p{color:var(--text-light);font-size:1.1rem;}
-/* Grid de tarjetas */
-.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-/* Estilo de tarjeta */
-.module-card{background:var(--card-bg);padding:2rem;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.05);transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;border:1px solid transparent;display:flex;flex-direction:column;align-items:flex-start;gap:15px;cursor:pointer;}
-.module-card:hover{transform:translateY(-5px);box-shadow:0 10px 15px -3px rgba(0,0,0,0.1);border-color:var(--secondary);}
-/* Iconos dentro de tarjetas */
-.icon-box{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:5px;}
-.module-title{font-size:1.25rem;font-weight:700;color:var(--text-main);margin-bottom:5px;}
-.module-desc{font-size:0.9rem;color:var(--text-light);line-height:1.5;}
-/* Tarjeta Pizarrón (Verde) */
-.card-board .icon-box{background:#ecfdf5;color:#059669;}
-/* Tarjeta Usuarios (Naranja) */
-.card-users .icon-box{background:#fff7ed;color:#ea580c;}
-/* Tarjeta Configuración/Soporte (Gris) */
-.card-settings .icon-box{background:#f3f4f6;color:#4b5563;}
-/* Tarjeta Inventario (Azul - Default) */
-.module-card:not(.card-board):not(.card-users):not(.card-settings) .icon-box{background:#eff6ff;color:#1e3a8a;}
-/* --- HERO SECTION CON VIDEO --- */
+/*HERO*/
 .hero-video-container{position:relative;width:100%;height:400px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:2rem;}
 .back-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;}
-/* Capa oscura semitransparente */
 .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,31,63,0.4);z-index:-1;}
-/* Texto sobre video */
-.hero-content{display:flex;flex-direction:row;align-items:center;text-align:center;color:white;z-index:1;padding:20px;}
-.hero-content h1{font-size:3rem;font-weight:700;margin-bottom:10px;text-shadow:0 2px 4px rgba(0,0,0,0.5);font-family:"Segoe UI",sans-serif;}
-.hero-content p{font-size:1.5rem;font-weight:300;}
 .hero-logo{flex:0 0 auto;filter:brightness(0) invert(1);}
 .hero-grid{position:relative;z-index:2;width:100%;max-width:1200px;display:flex;align-items:center;justify-content:center;gap:40px;padding:0 40px;}
 .big-badge{width:280px;height:auto;opacity:0.9;}
-.hero-text-col{flex:1;color:white;text-align: left;padding-left: 5%;padding-right: 5%;}
+.hero-text-col{flex:1;color:white;text-align:left;padding-left:5%;padding-right:5%;}
 .hero-text-col h1{font-size:3rem;line-height:1.1;font-weight:800;margin-bottom:15px;text-shadow:0 2px 10px rgba(0,0,0,0.5);}
 .hero-text-col h3{font-size:1.2rem;font-weight:700;margin-bottom:25px;text-shadow:0 2px 4px rgba(0,0,0,0.5);}
 .hero-text-col p{font-size:1rem;margin-bottom:25px;text-shadow:0 2px 4px rgba(0,0,0,0.5);}
-/* --- DESCUBRE MÁS --- */
-.discover-section{max-width:1200px;margin:4rem auto;padding:0 20px;}
-.section-title{color:#002b49;font-size:1.2rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-family:"Segoe UI",sans-serif;}
-.image-cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.image-card{position:relative;display:block;width:100%;height:300px;background-size:cover;background-position:center;border-radius:4px;overflow:hidden;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
 
+/*DISCOVER*/
+.discover-section{max-width:1200px;margin:4rem 14rem;padding:0 20px;}
+.section-title{color:#002b49;font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-family:"Segoe UI",sans-serif;}
+.image-cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;}
+.image-card{position:relative;display:block;width:100%;aspect-ratio:1/1;background-size:cover;background-position:center;border-radius:4px;overflow:hidden;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
+.card-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.45);transition:background-color 0.3s ease;z-index:1;}
+.card-content{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;}
+.card-content h3{color:white;font-size:1.8rem;font-weight:700;line-height:1.2;text-shadow:0 2px 4px rgba(0,0,0,0.5);margin:0;}
+.image-card:hover .card-overlay{background-color:rgba(0,31,63,0.6);}
+.image-card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 
-/* La Capa Azul Oscura (Overlay) */
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.45); /* Azul marino profundo con 85% opacidad */
-    transition: background-color 0.3s ease;
-    z-index: 1;
-}
+/*NEWS*/
+.news-section{max-width:1200px;margin:4rem 14rem;padding:0 20px;}
+.section-header-left{margin-bottom:3rem;}
+.news-subtitle{color:#64748b;font-size:1rem;margin-bottom:2rem;}
+.news-card{display:flex;background:white;border:1px solid #3b82f6;border-radius:4px;overflow:hidden;min-height:350px;box-shadow:0 4px 6px rgba(0,0,0,0.05);}
+.news-image-col{flex:1;position:relative;overflow:hidden;}
+.news-img{width:100%;height:100%;object-fit:cover;}
+.news-content-col{flex:1;padding:30px;display:flex;flex-direction:column;justify-content:space-between;}
+.news-meta-header{display:flex;align-items:center;gap:12px;margin-bottom:15px;}
+.author-avatar-circle{width:40px;height:40px;background-color:#cbd5e1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.meta-text{display:flex;flex-direction:column;font-size:0.85rem;}
+.author-name{font-weight:700;color:#1e293b;}
+.meta-date{color:#64748b;}
+.meta-options{margin-left:auto;color:#64748b;cursor:pointer;}
+.news-title{font-size:1.8rem;font-weight:700;color:#002b49;margin-bottom:15px;}
+.news-excerpt{color:#334155;line-height:1.6;font-size:1rem;flex-grow:1;}
+.news-footer{margin-top:20px;padding-top:15px;border-top:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;color:#64748b;font-weight:600;}
+.news-stats span{margin-right:15px;}
 
-/* Contenido (Texto) */
-.card-content {
-    position: relative;
-    z-index: 2; /* Encima del overlay */
-    height: 100%;
+/*FOOTER*/
+.main-footer {
     display: flex;
-    align-items: center;     /* Centrado Vertical */
-    justify-content: center; /* Centrado Horizontal */
-    text-align: center;
+    justify-content: space-between;
+    align-items: start;
     padding: 20px;
 }
 
-.card-content h3 {
-    color: white;
-    font-size: 1.8rem; /* Texto grande */
-    font-weight: 700;
-    line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    margin: 0;
+/*RESPONSIVE*/
+@media (max-width: 1024px) {
+    .discover-section,.news-section{margin:4rem 2rem;}
+
 }
 
-/* --- EFECTOS HOVER (Animación al pasar el mouse) --- */
-.image-card:hover .card-overlay {
-    background-color: rgba(0, 31, 63, 0.6); /* Se vuelve más transparente para ver la foto */
-}
-
-.image-card:hover {
-    transform: translateY(-5px); /* Se levanta un poco */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Responsive para el Grid */
-@media (max-width:768px){.modules-grid{grid-template-columns:1fr;}
-}
 @media (max-width: 900px) {
-    .hero-grid {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-text-col { text-align: center; }
-    .big-badge { width: 150px; margin-bottom: 20px; }
-    .hero-text-col h1 { font-size: 2rem; }
+    .hero-grid{flex-direction:column;text-align:center;padding:0 20px;}
+    .hero-text-col{text-align:center;padding-left:0;padding-right:0;}
+    .big-badge{width:150px;margin-bottom:20px;}
+    .hero-text-col h1{font-size:2rem;}
+    .discover-section,.news-section{margin:4rem 1rem;}
+
+}
+
+@media (max-width: 768px) {
+    .news-card{flex-direction:column;}
+    .news-image-col{height:200px;flex:none;}
+    .main-footer{flex-direction:column;align-items:center;gap:20px;}
 }

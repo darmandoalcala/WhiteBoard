@@ -31,8 +31,6 @@ overflow:hidden;}
 .event-container{display:flex;flex-direction:column;gap:4px;}
 .evt-flag{display:flex;align-items:center;gap:5px;font-size:0.8rem;font-weight:600;line-height:1.1;}
 .flag-box{width:15px;height:15px;flex-shrink:0;}
-.bg-green{background-color:#86efac;}
-.bg-yellow{background-color:#fde047;}
 .evt-birthday{display:flex;align-items:center;gap:5px;font-size:0.8rem;font-weight:700;color:#1f2937;}
 .cake-icon{color:#b91c1c;font-size:1rem;}
 .evt-anniversary{display:flex;align-items:center;gap:5px;font-size:0.8rem;font-weight:700;color:#4b5563;}
