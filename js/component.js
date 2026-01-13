@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="nuestra_esencia.html" class="nav-link">Nuestra Esencia</a>
             <span class="nav-separator">|</span>
             
-            <a href="#" class="nav-link">Somos Cultura, Somos Talento</a>
+            <a href="cultura_talento.html" class="nav-link">Somos Cultura, Somos Talento</a>
             <span class="nav-separator">|</span>
             
             <a href="#" class="nav-link">Juntos Movemos Vidas</a>
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     const footerHTML = `
-    <footer class="main-footer">
+    <footer class="main-footer" style="margin-top: 40px;">
         <div>
             <h2>GP Mobility</h2>
         </div>
@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div>
         </div>
     </footer>
+    <p style="padding: 10px; margin-bottom: 30px; font-weight: 700; font-size: 0.9em;">© 2026 GP Mobility</p>
     `;
 
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
