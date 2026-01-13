@@ -18,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="cultura_talento.html" class="nav-link">Somos Cultura, Somos Talento</a>
             <span class="nav-separator">|</span>
             
-            <a href="#" class="nav-link">Juntos Movemos Vidas</a>
+            <a href="juntos_movemos_vidas.html" class="nav-link">Juntos Movemos Vidas</a>
+            <span class="nav-separator">|</span>
+            
+            <a href="#" class="nav-link">Vacantes</a>
         </nav>
 
         <div></div> <!-- Espacio para alinear a la derecha -->
