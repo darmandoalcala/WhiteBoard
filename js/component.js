@@ -26,5 +26,31 @@ document.addEventListener("DOMContentLoaded", () => {
     </header>
     `;
 
+    const footerHTML = `
+    <footer class="main-footer">
+        <div>
+            <h2>GP Mobility</h2>
+        </div>
+        <div>
+            <h3>Oficina</h3>
+            <p>Av. Ignacio L Vallarta <br/> 6218, Jocotán, Zapopan</p>
+            <p>Jalisco, 45017</p>
+        </div>
+        <div>
+            <h3>Redes</h3>
+            <p><i class="fab fa-facebook-square"></i> GP Mobility</p>
+            <p><i class="fab fa-instagram"></i> gp_mobility</p>
+            <p><i class="fab fa-linkedin"></i> GP AUTOSERVICES</p>
+            <p><i class="fab fa-tiktok"></i> gp.mobility</p>
+        </div>
+        <div>
+        </div>
+        <div>
+        </div>
+    </footer>
+    `;
+
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
+
+    document.body.insertAdjacentHTML("beforeend", footerHTML);
 });
