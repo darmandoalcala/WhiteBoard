@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="caja_de_ahorros.html" class="nav-link">Caja de Ahorros</a>
             <span class="nav-separator">|</span>
             
-            <a href="#" class="nav-link">Vacantes</a>
+            <a href="vacantes.html" class="nav-link">Vacantes</a>
         </nav>
 
         <div></div> <!-- Espacio para alinear a la derecha -->
