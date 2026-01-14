@@ -1,5 +1,18 @@
-const card = document.querySelector('.animated-card');
+const cards = document.querySelectorAll('.animated-image-card');
 
-card.addEventListener('click', function() {
-    this.classList.toggle('flipped');
+function onCardClick(currentCard){
+    cards.forEach(i => {
+        if(i !== currentCard){
+            if(i.classList.contains('flipped')){
+                i.classList.toggle('flipped');
+            }
+        }
+    });
+}
+
+cards.forEach(card => {
+    card.addEventListener('click', function() {
+        this.classList.toggle('flipped');   
+        onCardClick(this);
+    });
 });
