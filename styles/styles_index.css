@@ -11,8 +11,12 @@
 .hero-text-col p{font-size:1rem;margin-bottom:25px;text-shadow:0 2px 4px rgba(0,0,0,0.5);}
 
 /*DISCOVER Y SECTION TEXT*/
-.general-section{max-width:1200px;margin:4rem 14rem;padding:0 20px;}
-.section-title{color:#002b49;font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:2rem;font-family:"Segoe UI",sans-serif;}
+.general-section{width:100%;padding:4rem 20px;}
+.general-subsection{max-width: 800px; margin: 0 auto; text-align: center;}
+.general-subsection h1{font-size: 3.5rem; margin-bottom: 1em;}
+.general-subsection h2{margin-bottom: 1em;}
+.general-subsection p{line-height: 1.6;}
+.discover-section{max-width: 1200px; margin: 4rem 14rem; padding:0 20px;}
 .image-cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;}
 .image-card{position:relative;display:block;width:100%;aspect-ratio:1/1;background-size:cover;background-position:center;border-radius:4px;overflow:hidden;text-decoration:none;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
 .card-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.45);transition:background-color 0.3s ease;z-index:1;}
@@ -24,6 +28,7 @@
 /*NEWS*/
 .news-section{max-width:1200px;margin:4rem 14rem;padding:0 20px;}
 .section-header-left{margin-bottom:3rem;}
+.section-title{color:#002b49;font-size:1.3rem;font-weight:700;letter-spacing:2px;margin-bottom:2rem;font-family:"Segoe UI",sans-serif;}
 .news-subtitle{color:#64748b;font-size:1rem;margin-bottom:2rem;}
 .news-card{display:flex;background:white;border:1px solid #3b82f6;border-radius:4px;overflow:hidden;min-height:350px;box-shadow:0 4px 6px rgba(0,0,0,0.05);cursor: pointer;}
 .news-image-col{flex:1;position:relative;overflow:hidden;}
@@ -65,6 +70,7 @@
 }
 
 @media (max-width: 768px) {
+    .discover-section{margin: 4rem 20px;}
     .news-card{flex-direction:column;}
     .news-image-col{height:200px;flex:none;}
 }
