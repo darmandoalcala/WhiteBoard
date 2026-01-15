@@ -5,40 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GP Mobility</title>
     <link rel="stylesheet" href="styles/styles_root.css">
-    <style>
-        body{display:flex;align-items:center;justify-content:center;background-color:#001f3f;}
-        .login-card{background:white;padding:40px;border-radius:12px;width:100%;max-width:400px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
-        .login-logo{width:150px;margin-bottom:20px;margin-left:auto;margin-right:auto;}
-        .input-group{margin-bottom:15px;text-align:left;}
-        .input-group label{display:block;font-size:0.9rem;margin-bottom:5px;color:#333;}
-        .input-group input{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:1rem;}
-        .btn-primary{width:100%;background-color:#001f3f;color:white;padding:12px;border:none;border-radius:6px;font-size:1rem;cursor:pointer;margin-top:10px;}
-        .btn-primary:hover{background-color:#1e3a8a;}
-        .toggle-text{margin-top:20px;font-size:0.9rem;color:#666;cursor:pointer;text-decoration:underline;}
-        #error-msg{color:#e11d48;font-size:0.9rem;margin-top:10px;display:none;}
-    </style>
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-
-    <div class="login-card">
-        <img src="img/mini_logo_gp.png" alt="GP Mobility" class="login-logo">
-        
-        <h2 id="form-title">Iniciar Sesión</h2>
-        
-        <div class="input-group">
-            <label>Correo</label>
-            <input type="email" id="email" placeholder="usuario@gpmobility.com">
+    <div class="card" id="card">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Crear Cuenta</h1>
+                <span>usa tu correo empresarial</span>
+                <input id="email-signup" type="email" placeholder="mail@gpmobility.mx" />
+                <input id="password-signup" type="password" placeholder="Contraseña" autocomplete="off" />
+                <p class="error-msg" id="error-msg-signup"></p>
+                <button id="signup-button">Registrar</button>
+            </form>
         </div>
-
-        <div class="input-group">
-            <label>Contraseña</label>
-            <input type="password" id="password" placeholder="********">
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Iniciar Sesión</h1>
+                <input id="email-login" type="email" placeholder="mail@gpmobility.mx" />
+                <input id="password-login" type="password" placeholder="Contraseña" autocomplete="off"/>
+                <p class="error-msg" id="error-msg-login"></p>
+                <button id="login-button">Entrar</button>
+            </form>
         </div>
-
-        <button class="btn-primary" id="action-btn">Entrar</button>
-        <p id="error-msg"></p>
-
-        <p class="toggle-text" id="toggle-btn">¿No tienes cuenta? Regístrate</p>
+        <div class="overlay-container">
+            <div class="login-overlay">
+                <div class="overlay-panel overlay-left">
+                    <img class="overlay-img" src="img/mini_logo_gp.png">
+                    <h1>¡Bienvenido!</h1>
+                    <p>Si ya cuentas con una cuenta, inicia sesión</p>
+                    <button class="ghost" id="logIn-toggle">Iniciar Sesión</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <img class="overlay-img" src="img/mini_logo_gp.png">
+                    <h1>¡Bienvenido!</h1>
+                    <p>Crea una cuenta con tu correo gpmobility para entrar al portal</p>
+                    <button class="ghost" id="signUp-toggle">Registrate</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="js/auth.js"></script>

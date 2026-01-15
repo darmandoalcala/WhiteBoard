@@ -1,87 +1,117 @@
 import { supabase } from './supabaseClient.js';
 const DOMAIN = "@gpmobility.mx"; 
 
-const emailInput = document.getElementById('email');
-const passInput = document.getElementById('password');
-const actionBtn = document.getElementById('action-btn');
-const toggleBtn = document.getElementById('toggle-btn');
-const title = document.getElementById('form-title');
-const errorMsg = document.getElementById('error-msg');
+const emailLogin = document.getElementById('email-login');
+const passwordLogin = document.getElementById('password-login');
+const emailSignup = document.getElementById('email-signup');
+const passwordSignup = document.getElementById('password-signup');
 
-let isLoginMode = true; 
+const loginButton = document.getElementById('login-button');
+const registerButton = document.getElementById('signup-button');
+const signUpButton = document.getElementById('signUp-toggle');
+const logInButton = document.getElementById('logIn-toggle');
+const container = document.getElementById('card');
 
-
-toggleBtn.addEventListener('click', () => {
-    isLoginMode = !isLoginMode;
-    if (isLoginMode) {
-        title.textContent = "Iniciar Sesión";
-        actionBtn.textContent = "Entrar";
-        toggleBtn.textContent = "¿No tienes cuenta? Regístrate aquí";
-    } else {
-        title.textContent = "Crear Cuenta";
-        actionBtn.textContent = "Registrarse";
-        toggleBtn.textContent = "¿Ya tienes cuenta? Inicia sesión";
-    }
-    errorMsg.style.display = 'none';
-});
+const errorMsgLogin = document.getElementById('error-msg-login');
+const errorMsgSignup = document.getElementById('error-msg-signup');
 
 
-actionBtn.addEventListener('click', async () => {
-    const email = emailInput.value.trim();
-    const password = passInput.value.trim();
-
+loginButton.addEventListener('click', async (e) => {
+    e.preventDefault();
     
+    errorMsgLogin.style.display = 'none';
+
+    const email = emailLogin.value.trim();
+    const password = passwordLogin.value.trim();
+
     if (!email || !password) {
-        showError("Por favor completa todos los campos");
+        showError(errorMsgLogin, "Por favor completa todos los campos");
         return;
     }
 
-    
     if (!email.endsWith(DOMAIN)) {
-        showError(`Solo se permiten correos de ${DOMAIN}`);
+        showError(errorMsgLogin, `Solo se permiten correos de ${DOMAIN}`);
         return;
     }
 
-    actionBtn.textContent = "Procesando...";
-    actionBtn.disabled = true;
+    const originalText = loginButton.textContent;
+    loginButton.textContent = "Procesando...";
+    loginButton.disabled = true;
 
-    try {
-        if (isLoginMode) {
-            
-            const { data, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password,
-            });
-            if (error) throw error;
-            
-            
-            window.location.href = "index.html"; 
-
-        } else {
-            
-            const { data, error } = await supabase.auth.signUp({
-                email: email,
-                password: password,
-            });
-            if (error) throw error;
-
-            alert("Cuenta creada con éxito. ¡Ya puedes iniciar sesión!");
-            
-            isLoginMode = true;
-            title.textContent = "Iniciar Sesión";
-            actionBtn.textContent = "Entrar";
-            toggleBtn.textContent = "¿No tienes cuenta? Regístrate aquí";
-        }
+    try {          
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
+        });
+        if (error) throw error;
+        
+        window.location.href = "index.html"; 
 
     } catch (error) {
-        showError(error.message);
+        showError(errorMsgLogin, error.message || "Error al iniciar sesión");
     } finally {
-        actionBtn.disabled = false;
-        actionBtn.textContent = isLoginMode ? "Entrar" : "Registrarse";
+        loginButton.textContent = originalText;
+        loginButton.disabled = false;
     }
 });
 
-function showError(msg) {
-    errorMsg.textContent = msg;
-    errorMsg.style.display = 'block';
+registerButton.addEventListener('click', async (e) => {
+    e.preventDefault(); 
+
+    errorMsgSignup.style.display = 'none';
+    
+    const email = emailSignup.value.trim();
+    const password = passwordSignup.value.trim();
+
+    if (!email || !password) {
+        showError(errorMsgSignup, "Por favor completa todos los campos");
+        return;
+    }
+
+    if (!email.endsWith(DOMAIN)) {
+        showError(errorMsgSignup, `Solo se permiten correos de ${DOMAIN}`);
+        return;
+    }
+
+    const originalText = registerButton.textContent;
+    registerButton.textContent = "Procesando...";
+    registerButton.disabled = true;
+
+    try {
+        const { data, error } = await supabase.auth.signUp({
+            email: email,
+            password: password,
+        });
+        if (error) throw error;
+
+        alert("Cuenta creada con éxito. ¡Ya puedes iniciar sesión!");
+        emailSignup.value = "";
+        passwordSignup.value = "";
+        container.classList.remove("right-panel-active");
+
+    } catch (error) {
+        showError(errorMsgSignup, error.message || "Error al registrarse");
+    } finally {
+        registerButton.textContent = originalText;
+        registerButton.disabled = false;
+    }
+});
+
+
+function showError(element, msg) {
+    element.textContent = msg;
+    element.style.display = 'block';
 }
+
+
+signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+    errorMsgLogin.style.display = 'none';
+    errorMsgSignup.style.display = 'none';
+});
+
+logInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+    errorMsgLogin.style.display = 'none';
+    errorMsgSignup.style.display = 'none';
+});
