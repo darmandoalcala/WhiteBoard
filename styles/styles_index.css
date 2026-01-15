@@ -74,4 +74,16 @@
     .discover-section{margin: 4rem 20px;}
     .news-card{flex-direction:column;}
     .news-image-col{height:200px;flex:none;}
+    .contact-section{padding:0 20px;}
+    .contact-section h1{font-size:1.8rem;margin-bottom:2rem;margin-top:1em !important;}
+    .contact-section .image-card{height:320px;}
+    .contact-section .image-cards-grid{gap:20px;}
+    .contact-section .card-content h3{font-size:1.3rem;}
+
+}
+
+
+@media (max-width: 480px) {
+    .contact-section .image-cards-grid{grid-template-columns:1fr;}
+    .contact-section .image-card{height:300px;}
 }
