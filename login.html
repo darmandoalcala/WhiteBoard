@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP Mobility</title>
+    <link rel="stylesheet" href="styles/styles_root.css">
+    <style>
+        body{display:flex;align-items:center;justify-content:center;background-color:#001f3f;}
+        .login-card{background:white;padding:40px;border-radius:12px;width:100%;max-width:400px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+        .login-logo{width:150px;margin-bottom:20px;margin-left:auto;margin-right:auto;}
+        .input-group{margin-bottom:15px;text-align:left;}
+        .input-group label{display:block;font-size:0.9rem;margin-bottom:5px;color:#333;}
+        .input-group input{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:1rem;}
+        .btn-primary{width:100%;background-color:#001f3f;color:white;padding:12px;border:none;border-radius:6px;font-size:1rem;cursor:pointer;margin-top:10px;}
+        .btn-primary:hover{background-color:#1e3a8a;}
+        .toggle-text{margin-top:20px;font-size:0.9rem;color:#666;cursor:pointer;text-decoration:underline;}
+        #error-msg{color:#e11d48;font-size:0.9rem;margin-top:10px;display:none;}
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <img src="img/mini_logo_gp.png" alt="GP Mobility" class="login-logo">
+        
+        <h2 id="form-title">Iniciar Sesión</h2>
+        
+        <div class="input-group">
+            <label>Correo</label>
+            <input type="email" id="email" placeholder="usuario@gpmobility.com">
+        </div>
+
+        <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" id="password" placeholder="********">
+        </div>
+
+        <button class="btn-primary" id="action-btn">Entrar</button>
+        <p id="error-msg"></p>
+
+        <p class="toggle-text" id="toggle-btn">¿No tienes cuenta? Regístrate</p>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>
