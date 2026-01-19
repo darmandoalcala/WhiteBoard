@@ -1,6 +1,61 @@
 import { supabase } from './supabaseClient.js';
 
+function injectModalHTML() {
+    if (!document.getElementById('news-modal')) {
+        const modalHTML = `
+        <div class="news-modal-overlay" id="news-modal">
+            <div class="news-modal-content">
+                <button class="close-modal-btn" id="close-news-modal">&times;</button>
+                
+                <img src="" alt="Noticia" class="modal-hero-img" id="modal-img">
+                
+                <div class="modal-body-content">
+                    <div class="modal-meta">
+                        <span id="modal-date"></span>
+                        <span id="modal-author"></span>
+                    </div>
+                    <h2 class="modal-title" id="modal-title"></h2>
+                    <div class="modal-text" id="modal-text"></div>
+                </div>
+            </div>
+        </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        const modal = document.getElementById('news-modal');
+        const closeBtn = document.getElementById('close-news-modal');
+        
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+}
+
+function openNewsModal(item, dateFormatted) {
+    const modal = document.getElementById('news-modal');
+    
+    document.getElementById('modal-img').src = item.imagen_url || 'assets/img_calendar.jpeg';
+    document.getElementById('modal-date').innerText = dateFormatted;
+    document.getElementById('modal-author').innerHTML = `<i class="fas fa-user"></i> ${item.autor || 'GP Mobility'}`;
+    document.getElementById('modal-title').innerText = item.titulo;
+    
+    document.getElementById('modal-text').innerText = item.contenido; 
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
 async function loadLatestNews() {
+    injectModalHTML();
+
     const container = document.getElementById('latest-news-container');
     const { data: news, error } = await supabase
         .from('noticias')
@@ -20,7 +75,6 @@ async function loadLatestNews() {
     }
 
     const item = news[0];
-        console.table(item);
     
     const dateObj = new Date(item.fecha + "T12:00:00"); 
     const dateFormatted = new Intl.DateTimeFormat('es-MX', {
@@ -29,13 +83,13 @@ async function loadLatestNews() {
         year: 'numeric'
     }).format(dateObj);
 
-
     const newsHTML = `
-    <div class="news-card">
+    <div class="news-card" id="latest-news-card">
         
         <div class="news-image-col">
             <img src="${item.imagen_url}" alt="${item.titulo}" class="news-img" 
-                onerror="this.src='assets/img_calendar.jpeg'"> </div>
+                onerror="this.src='assets/img_calendar.jpeg'"> 
+        </div>
 
         <div class="news-content-col">
             
@@ -53,6 +107,7 @@ async function loadLatestNews() {
             <h3 class="news-title">${item.titulo}</h3>
             <p class="news-excerpt">
                 ${item.contenido.substring(0, 200)}...
+                <span style="color: var(--primary); font-weight: bold; font-size: 0.9em;">(Leer más)</span>
             </p>
 
             <div class="news-footer">
@@ -60,12 +115,17 @@ async function loadLatestNews() {
                     <span>${item.vistas || 0} visualizaciones</span>
                     <span>${item.likes || 0} <i class="fas fa-heart" style="color: #e11d48;"></i></span>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
     `;
 
     container.innerHTML = newsHTML;
+
+    const cardElement = document.getElementById('latest-news-card');
+    cardElement.addEventListener('click', () => {
+        openNewsModal(item, dateFormatted);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
