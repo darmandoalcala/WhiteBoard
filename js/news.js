@@ -60,7 +60,7 @@ async function loadLatestNews() {
     const { data: news, error } = await supabase
         .from('noticias')
         .select('*')
-        .order('fecha', { ascending: false })
+        .order('FECHA', { ascending: false })
         .limit(1);
 
     if (error) {
@@ -76,7 +76,7 @@ async function loadLatestNews() {
 
     const item = news[0];
     
-    const dateObj = new Date(item.fecha + "T12:00:00"); 
+    const dateObj = new Date(item.FECHA + "T12:00:00"); 
     const dateFormatted = new Intl.DateTimeFormat('es-MX', {
         day: 'numeric',
         month: 'short',
@@ -87,7 +87,7 @@ async function loadLatestNews() {
     <div class="news-card" id="latest-news-card">
         
         <div class="news-image-col">
-            <img src="${item.imagen_url}" alt="${item.titulo}" class="news-img" 
+            <img src="${item.IMAGEN_URL}" alt="${item.TITULO}" class="news-img" 
                 onerror="this.src='assets/img_calendar.jpeg'"> 
         </div>
 
@@ -98,22 +98,22 @@ async function loadLatestNews() {
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="meta-text">
-                    <span class="author-name">${item.autor || 'GP Mobility'}</span>
+                    <span class="author-name">${item.AUTOR || 'GP Mobility'}</span>
                     <span class="meta-date">${dateFormatted} · ${item.minutos_lectura || 1} Min. de lectura</span>
                 </div>
                 <div class="meta-options"><i class="fas fa-ellipsis-v"></i></div>
             </div>
 
-            <h3 class="news-title">${item.titulo}</h3>
+            <h3 class="news-title">${item.TITULO}</h3>
             <p class="news-excerpt">
-                ${item.contenido.substring(0, 200)}...
+                ${item.CONTENIDO.substring(0, 200)}...
                 <span style="color: var(--primary); font-weight: bold; font-size: 0.9em;">(Leer más)</span>
             </p>
 
             <div class="news-footer">
                 <div class="news-stats">
-                    <span>${item.vistas || 0} visualizaciones</span>
-                    <span>${item.likes || 0} <i class="fas fa-heart" style="color: #e11d48;"></i></span>
+                    <span>${item.VISTAS || 0} visualizaciones</span>
+                    <span>${item.LIKES || 0} <i class="fas fa-heart" style="color: #e11d48;"></i></span>
                 </div>
             </div>
         </div>

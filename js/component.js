@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="nav-separator">|</span>
                 
                 <a href="vacantes.html" class="nav-link">Vacantes</a>
+
                 
             </nav>
 
@@ -74,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><i class="fab fa-linkedin"></i> GP AUTOSERVICES</p>
                 <p><i class="fab fa-tiktok"></i> gp.mobility</p>
             </div>
+
         </div>
         <div style="margin-top: 10px; padding-top: 20px; text-align: center;">
             <p style="color: #001f3f; font-size: 0.9em;">© 2026 GP Mobility</p>
