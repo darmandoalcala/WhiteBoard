@@ -72,8 +72,7 @@
 
 /*RESPONSIVE*/
 @media (max-width: 1024px) {
-    .general-section,.news-section{margin:4rem 2rem;}
-
+    .general-section,.news-section{width:100%;margin:4rem 0;padding:0 2rem;box-sizing:border-box;}
 }
 
 @media (max-width: 900px) {
@@ -81,8 +80,7 @@
     .hero-text-col{text-align:center;padding-left:0;padding-right:0;}
     .big-badge{width:150px;margin-bottom:20px;}
     .hero-text-col h1{font-size:2rem;}
-    .general-section,.news-section{margin:4rem 1rem;}
-
+    .general-section,.news-section{width:100%;margin:4rem 0;padding:0 1rem;}
 }
 
 @media (max-width: 768px) {

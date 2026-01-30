@@ -24,7 +24,7 @@
         </div>
     </section>
 
-    <section class="valores-section">
+    <section class="general-section">
         <label>¿A quién va dirigido tu reconocimiento?</label> 
             <div class="grupo-horizontal">
                 <div class="campo-individual" style="position: relative;">
@@ -58,30 +58,40 @@
 
             <label>¿Qué le vas a reconocer a esa persona?</label>
             <div class="grupo-horizontal">
-            <select id="form-reconocimiento">
-                <option>Humildad</option>
-                <option>Respeto</option>
-                <option>Excelencia</option>
-                <option>Confianza</option>
-                <option>Colaboración</option>
-                <option>Liderazgo constructivo</option>
-                <option>Resolución de problemas</option>
-                <option>Enfoque a resultados</option>
-                <option>Alineación con el negocio</option>
-            </select>
-        </div>
+                <select id="form-reconocimiento">
+                    <option>Humildad</option>
+                    <option>Respeto</option>
+                    <option>Excelencia</option>
+                    <option>Confianza</option>
+                    <option>Colaboración</option>
+                    <option>Liderazgo constructivo</option>
+                    <option>Resolución de problemas</option>
+                    <option>Enfoque a resultados</option>
+                    <option>Alineación con el negocio</option>
+                </select>
+            </div>
+            <div>
+                <img src="assets/valoresAReconocer.png"/>
+            </div>
 
         <label>
             Cuéntanos qué hizo esta persona que merece ser reconocido/a: <br/>
             <strong>✍️ “Cuando tú hiciste…”  </strong><br/>
-            <em>(Describe brevemente la acción, el gesto o la actitud que te inspiró a reconocerlo.)</em>
+            <em>(Describe brevemente la acción, el gesto o la actitud que te inspiró a reconocerlo).</em>
         </label>
         <div class="grupo-horizontal">
             <input type="text" id="form-" required>
         </div>
 
+        <div class="grupo-horizontal">
+            <button type="submit" id="btn-enviar" class="display: block;">
+                <i class="fas fa-paper-plane"></i> Enviar
+            </button>
+        </div>
+
     </section>
 
-    <script src="js/component.js"></script>
+    <script type="module" src="js/component.js"></script>
+    <script type="module" src="js/user_search.js"></script>
 </body>
 </html>
