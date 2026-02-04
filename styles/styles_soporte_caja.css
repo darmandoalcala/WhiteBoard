@@ -39,11 +39,6 @@ body{background-color:var(--bg-light);min-height:100vh;display:flex;flex-directi
 .icons i{font-size: 2rem;};
 .resource-card h2{color:var(--primary);margin-bottom:10px;font-size:1.5rem;}
 .resource-card p{color:#666;margin-bottom:25px;font-size:0.95rem;}
-.btn-excel{display:flex;align-items:center;justify-content:center;gap:12px;background-color:white;color:#333;border:2px solid #e0e0e0;padding:15px 20px;border-radius:10px;text-decoration:none;font-weight:600;margin-bottom:15px;transition:all 0.3s ease;width:100%;text-align:left;}
-.btn-excel i{color:#1D6F42;font-size:1.4rem;}
-.btn-excel:hover{border-color:#1D6F42;background-color:#f0fff4;transform:translateX(5px);box-shadow:0 4px 10px rgba(29,111,66,0.1);}
-.btn-contact{display:inline-flex;align-items:center;gap:10px;background-color:var(--primary);color:white;padding:12px 25px;border-radius:50px;text-decoration:none;font-weight:bold;transition:background 0.3s;}
-.btn-contact:hover{background-color:#003366;box-shadow:0 5px 15px rgba(0,31,63,0.3);}
 .alcancia-img{max-width:350px;margin: 20px auto;filter:drop-shadow(0 10px 15px rgba(0,0,0,0.2));animation:float 6s ease-in-out infinite;}
 
 

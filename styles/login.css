@@ -212,6 +212,71 @@ input {
     display: none;
 }
 
+/* Asegúrate de mantener tus estilos anteriores del slider */
+
+/* --- NUEVOS ESTILOS PARA INPUTS Y BUSCADOR --- */
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 8px 0;
+}
+
+/* Ajuste para que el input ocupe el espacio correcto dentro del wrapper */
+.input-wrapper input {
+    width: 100%;
+    margin: 0; /* El margen lo maneja el wrapper */
+    padding-right: 40px; /* Espacio para el ojito */
+}
+
+/* Icono de Ver Contraseña */
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+/* Lista de Sugerencias (Autocompletado) */
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none;
+    text-align: left;
+}
+
+.suggestions-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
 /*RESPONSIVE*/
 
 @media (max-width:768px){
