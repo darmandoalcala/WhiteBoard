@@ -42,7 +42,7 @@ function injectModalHTML() {
 function openNewsModal(item, dateFormatted) {
     const modal = document.getElementById('news-modal');
     
-    document.getElementById('modal-img').src = item.imagen_url || 'assets/img_calendar.jpeg';
+    document.getElementById('modal-img').src = item.IMAGEN_URL || 'assets/vision.png';
     document.getElementById('modal-date').innerText = dateFormatted;
     document.getElementById('modal-author').innerHTML = `<i class="fas fa-user"></i> ${item.autor || 'GP Mobility'}`;
     document.getElementById('modal-title').innerText = item.titulo;
