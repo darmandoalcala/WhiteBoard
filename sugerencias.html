@@ -13,7 +13,7 @@
         body{background-color:var(--bg-light);min-height:100vh;display:flex;flex-direction:column;}
         .main-container{flex:1;width:100%;padding:40px 20px;display:flex;justify-content:center;align-items:center;margin-top:60px;}
         .suggestion-card{background:var(--white);max-width:1000px;width:100%;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.1);display:flex;overflow:hidden;flex-wrap:wrap;}
-        .info-col{flex:1;padding:50px;background:linear-gradient(135deg,#FF851B 0%,#FF4136 100%);/* Naranja cálido para creatividad */
+        .info-col{flex:1;padding:50px;background:linear-gradient(135deg,#001f3f 0%,#1e3a8a 100%);
         color:var(--white);min-width:320px;display:flex;flex-direction:column;justify-content:center;}
         .icon-header{width:70px;height:70px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:25px;color:white;}
         .info-col h1{font-size:2.2rem;font-weight:700;margin-bottom:20px;line-height:1.2;}
@@ -76,11 +76,10 @@
                         <label>Tipo de Mensaje</label>
                         <select id="tipo" required>
                             <option value="" disabled selected>Selecciona una opción...</option>
-                            <option value="Mejora">💡 Propuesta de Mejora</option>
-                            <option value="Felicitacion">👏 Felicitación / Agradecimiento</option>
-                            <option value="Queja">⚠️ Queja o Inconformidad</option>
-                            <option value="Seguridad">🦺 Tema de Seguridad</option>
-                            <option value="Otro">💬 Otro</option>
+                            <option value="Mejora">Propuesta de Mejora</option>
+                            <option value="Agradecimiento">Agradecimiento</option>
+                            <option value="Queja">Queja o Inconformidad</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
 
@@ -88,11 +87,12 @@
                         <label>Departamento relacionado</label>
                         <select id="area" required>
                             <option value="General">General</option>
-                            <option value="Recursos Humanos">Recursos Humanos</option>
-                            <option value="Sistemas / IT">Sistemas / IT</option>
+                            <option value="Accesorios">Accesorios</option>
+                            <option value="Administración">Administración</option>
+                            <option value="Comercial">Comercial</option>
+                            <option value="Cultura y talento">Cultura y Talento</option>
                             <option value="Operaciones">Operaciones</option>
-                            <option value="Ventas">Ventas</option>
-                            <option value="Administracion">Administración</option>
+                            
                         </select>
                     </div>
 
