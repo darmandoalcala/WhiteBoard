@@ -41,18 +41,15 @@ function injectModalHTML() {
 
 function openNewsModal(item, dateFormatted) {
     const modal = document.getElementById('news-modal');
-    
     document.getElementById('modal-img').src = item.IMAGEN_URL || 'assets/vision.png';
     document.getElementById('modal-date').innerText = dateFormatted;
-    document.getElementById('modal-author').innerHTML = `<i class="fas fa-user"></i> ${item.autor || 'GP Mobility'}`;
-    document.getElementById('modal-title').innerText = item.titulo;
-    
-    document.getElementById('modal-text').innerText = item.contenido; 
+    document.getElementById('modal-author').innerHTML = `<i class="fas fa-user"></i> ${item.AUTOR || 'GP Mobility'}`; 
+    document.getElementById('modal-title').innerText = item.TITULO; 
+    document.getElementById('modal-text').innerText = item.CONTENIDO; 
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 async function loadLatestNews() {
     injectModalHTML();
 
