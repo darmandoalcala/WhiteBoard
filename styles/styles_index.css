@@ -27,6 +27,22 @@
 .image-card:hover .card-overlay{background-color:rgba(0,31,63,0.6);}
 .image-card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 
+/* ENVIAR RECONOCIMIENTO*/
+.cta-recognition-container{max-width:1200px;margin:40px auto;padding:0 20px;}
+.cta-banner{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#001f3f 0%,#003366 100%);color:white;text-decoration:none;padding:30px 50px;border-radius:12px;box-shadow:0 5px 15px rgba(0,31,63,0.2);transition:all 0.3s ease;border:1px solid rgba(255,255,255,0.1);}
+.cta-content{display:flex;align-items:center;gap:25px;}
+.cta-icon{font-size:2.5rem;color:#3b82f6;background:rgba(255,255,255,0.1);width:70px;height:70px;display:flex;align-items:center;justify-content:center;border-radius:50%;}
+.cta-text h3{margin:0;font-size:1.5rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.cta-text p{margin:5px 0 0 0;font-size:1rem;color:#cbd5e1;font-weight:300;}
+.cta-action{display:flex;align-items:center;gap:10px;background-color:rgba(255,255,255,0.1);padding:10px 20px;border-radius:50px;transition:background 0.3s ease;}
+.cta-action span{font-weight:600;font-size:0.95rem;}
+.cta-banner:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,31,63,0.3);}
+.cta-banner:hover .cta-action{background-color:#3b82f6;color:white;}
+.cta-banner:hover .cta-action i{transform:translateX(5px);}
+@media (max-width:768px){
+}
+
+
 /*NEWS*/
 .section-header-left{margin-bottom:3rem;}
 .section-title{color:#002b49;font-size:1.3rem;font-weight:700;letter-spacing:2px;margin-bottom:2rem;font-family:"Segoe UI",sans-serif;}
@@ -72,7 +88,7 @@
 
 /*RESPONSIVE*/
 @media (max-width: 1024px) {
-    .general-section,.news-section{width:100%;margin:4rem 0;padding:0 2rem;box-sizing:border-box;}
+    .discover-section,.general-section,.news-section{width:100%;margin:4rem 0;padding:0 2rem;box-sizing:border-box;}
 }
 
 @media (max-width: 900px) {
@@ -80,11 +96,10 @@
     .hero-text-col{text-align:center;padding-left:0;padding-right:0;}
     .big-badge{width:150px;margin-bottom:20px;}
     .hero-text-col h1{font-size:2rem;}
-    .general-section,.news-section{width:100%;margin:4rem 0;padding:0 1rem;}
+    .discover-section,.general-section,.news-section{width:100%;margin:4rem 0;padding:0 1rem;}
 }
 
 @media (max-width: 768px) {
-    .discover-section{margin: 4rem 20px;}
     .news-card{flex-direction:column;}
     .news-image-col{height:200px;flex:none;}
     .contact-section{padding:0 20px;}
@@ -92,6 +107,10 @@
     .contact-section .image-card{height:320px;}
     .contact-section .image-cards-grid{gap:20px;}
     .contact-section .card-content h3{font-size:1.3rem;}
+
+    .cta-banner{flex-direction:column;text-align:center;padding:30px 20px;gap:20px;}
+    .cta-content{flex-direction:column;gap:15px;}
+    .cta-action{width:100%;justify-content:center;}
 
 }
 
