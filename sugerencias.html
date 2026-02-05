@@ -37,7 +37,7 @@
             .info-col,.form-col{padding:30px;}
             .main-container{margin-top:80px;}
         }
-</style>
+    </style>
     
     <script type="module" src="js/auth_guard.js"></script>
 </head>
@@ -92,7 +92,6 @@
                             <option value="Comercial">Comercial</option>
                             <option value="Cultura y talento">Cultura y Talento</option>
                             <option value="Operaciones">Operaciones</option>
-                            
                         </select>
                     </div>
 
@@ -118,6 +117,23 @@
     <script type="module">
         import { supabase } from './js/supabaseClient.js';
 
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCaBQQ5xu0aOhvElUoKUqAcc6eKrNK8p5s",
+            authDomain: "buzonsugerencias-3537c.firebaseapp.com",
+            projectId: "buzonsugerencias-3537c",
+            storageBucket: "buzonsugerencias-3537c.firebasestorage.app",
+            messagingSenderId: "860515712939",
+            appId: "1:860515712939:web:60e23b7be0c2d14b6d1cee",
+            measurementId: "G-T5NQQ26DKT"
+        };
+
+        // 4. INICIALIZAR FIREBASE
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app); 
+
         const form = document.getElementById('buzon-form');
         const btnEnviar = document.getElementById('btn-enviar');
 
@@ -137,7 +153,7 @@
                 const { data: { user } } = await supabase.auth.getUser();
 
                 if (!user) {
-                    alert("Debes iniciar sesión para usar el buzón.");
+                    alert("Tu sesión ha expirado. Por favor inicia sesión nuevamente.");
                     window.location.href = 'login.html';
                     return;
                 }
@@ -147,28 +163,25 @@
                     area: area,
                     mensaje: mensaje,
                     es_anonimo: esAnonimo,
-                    usuario_id: esAnonimo ? null : user.id 
+                    creado_en: serverTimestamp(), 
+                    usuario_id: esAnonimo ? null : user.id,
+                    usuario_email: esAnonimo ? null : user.email
                 };
 
-                const { error } = await supabase
-                    .from('buzon')
-                    .insert([nuevaSugerencia]);
+                await addDoc(collection(db, "buzon"), nuevaSugerencia);
 
-                if (error) throw error;
-
-                alert(esAnonimo ? "Mensaje enviado anónimamente. ¡Gracias!" : "Mensaje enviado con éxito. ¡Gracias por tu aporte!");
+                alert(esAnonimo ? "Mensaje enviado anónimamente." : "Mensaje enviado correctamente.");
                 form.reset();
 
             } catch (error) {
                 console.error("Error:", error);
-                alert("Hubo un error al enviar tu mensaje. Intenta de nuevo.");
+                alert("Hubo un error al enviar tu mensaje.");
             } finally {
                 btnEnviar.innerHTML = originalText;
                 btnEnviar.disabled = false;
             }
         });
     </script>
-
     <script type="module" src="js/component.js"></script>
 </body>
 </html>

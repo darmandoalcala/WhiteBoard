@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerHTML = `
     <header class="main-header">
         <div class="container-limit">
-            <a href="index.html" class="brand" title="Volver al Inicio">
+            <a href="/" class="brand" title="Volver al Inicio">
                 <img src="img/mini_logo_gp.png" alt="GP Mobility Logo"> 
             </a>
             <nav style="display: flex; background-color: red;">
 
             </nav>
             <nav class="header-nav">
-                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="/" class="nav-link">Inicio</a>
                 <span class="nav-separator">|</span>
                 
                 <a href="nuestra_esencia.html" class="nav-link">Nuestra Esencia</a>
