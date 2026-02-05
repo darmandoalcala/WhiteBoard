@@ -64,6 +64,7 @@ const handleSearch = async (e) => {
         const { data, error } = await supabase
             .from('usuarios')
             .select('"id", "NOMBRE COMPLETO", "DEPARTAMENTO"')
+            .eq("ACTIVO", true)
             .ilike('"NOMBRE COMPLETO"', `%${query}%`) 
             .limit(5);
 
