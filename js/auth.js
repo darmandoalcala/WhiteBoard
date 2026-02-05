@@ -56,7 +56,8 @@ const handleSearch = async (e) => {
     try {
         const { data, error } = await supabase
             .from('usuarios')
-            .select('id, "NOMBRE COMPLETO", CORREO') 
+            .select('id, "NOMBRE COMPLETO", CORREO')
+            .eq('ACTIVO', true)
             .ilike('"NOMBRE COMPLETO"', `%${query}%`) 
             .limit(5);
 
@@ -146,7 +147,7 @@ loginButton.addEventListener('click', async (e) => {
         });
         if (error) throw error;
         
-        window.location.href = "index.html"; 
+        window.location.href = "/"; 
 
     } catch (error) {
         showError(errorMsgLogin, "Correo o contraseña incorrectos");
