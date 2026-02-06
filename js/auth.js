@@ -168,10 +168,10 @@ registerButton.addEventListener('click', async (e) => {
     const email = emailSignup.value.trim();
     const password = passwordSignup.value.trim();
     const confirm = passwordConfirm.value.trim();
-    const fullName = userSearchInput.value.trim();
+    const selectedName = userSearchInput.value;
 
     // Validaciones
-    if (!email || !password || !confirm || !fullName) {
+    if (!email || !password || !confirm || !selectedName) {
         showError(errorMsgSignup, "Por favor completa todos los campos y busca tu nombre.");
         return;
     }
@@ -202,7 +202,7 @@ registerButton.addEventListener('click', async (e) => {
             password: password,
             options: {
                 data: {
-                    full_name: fullName // Guardamos el nombre en los metadatos de Auth también
+                    nombre_vinculacion: selectedName
                 }
             }
         });
