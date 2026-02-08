@@ -164,10 +164,12 @@ img {
 }
 
 @media (max-width:768px) {
-    .main-footer {
-        flex-direction:column;align-items:center;gap:20px;
+    .main-footer .container-limit {
+        flex-direction:column;
+        align-items:center !important; /* Override inline style */
+        gap:30px;
+        text-align: center;
     }
-
 }
 
 

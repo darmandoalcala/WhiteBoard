@@ -1,56 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vacantes</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles/styles_root.css">
-        <link rel="stylesheet" href="styles/styles_index.css">
-        <link rel="stylesheet" href="styles/styles_animations.css">
-        <link rel="stylesheet" href="styles/styles_vacantes.css">
-        <script type="module" src="js/auth_guard.js"></script>
-    </head>
-    <body>
-        <section class="general-section">
-            <div class="general-subsection">
-                <h1>Vacantes</h1>
-            </div>
-        </section>
-        <section class="general-section">
-            <div class="vacant-card">
-                <div class="vacant-details-col">
-                    <h1 class="vacant-title">Polarizador</h1>
-                    <h3 class="vacant-salary">$17,000</h3>
-                    <p class="vacant-area">Área: Comercial</p>
-                    <p class="vacant-location">Tepic, Nayarit</p>
-                    <p class="vacant-resume">En GP Mobility estamos buscando tu habilidad para aplicar para la vacante de polarizador...</p>
-                    <button id="openModalBtn" class="vacant-apply-button">
-                        <p class="vacant-apply-text"><i class="fab fa-regular fa-pen-to-square"></i> Postularme</p>
-                    </button>
-                </div>
-                <div class="vacant-details-buttons">
-                    <p id="vacant-heart"><i class="fab fa-regular fa-heart"></i></p>
-                    <p id="vacant-like"><i class="fab fa-regular fa-thumbs-up"></i></p>
-                </div>
-            </div>
-        </section>
 
-        <div id="myModal" class="vacant-modal-overlay">
-            <div class="vacant-modal-content">
-                <span class="close-btn">&times;</span>
-                <h1 class="vacant-title">Polarizador</h1>
-                <h3 class="vacant-salary">$17,000</h3>
-                <p class="vacant-area">Área: Comercial</p>
-                <p class="vacant-location">Tepic, Nayarit</p>
-                <p class="vacant-resume">En GP Mobility estamos buscando tu habilidad para aplicar para la vacante de polarizador...</p>
-                <button id="openModalBtn" class="vacant-apply-button">
-                    <p class="vacant-apply-text"><i class="fab fa-regular fa-pen-to-square"></i> Postularme</p>
-                </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacantes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles_root.css">
+    <link rel="stylesheet" href="styles/styles_index.css">
+    <link rel="stylesheet" href="styles/styles_animations.css">
+    <link rel="stylesheet" href="styles/styles_vacantes.css">
+    <link rel="stylesheet" href="styles/styles_soporte_caja.css">
+    <link rel="stylesheet" href="styles/styles_skeletons.css">
+    <script type="module" src="js/auth_guard.js"></script>
+</head>
+
+<body>
+    <section class="general-section">
+        <div class="general-subsection">
+            <h1>Vacantes</h1>
+        </div>
+    </section>
+    <!-- SKELETONS -->
+    <section id="vacancies-skeleton-container" class="general-section" style="background-color: transparent;">
+        <div class="resources-grid"
+            style="justify-content: center; display: flex; flex-direction: column; align-items: center; gap: 30px;">
+            <!-- Skeleton 1 -->
+            <div class="skeleton-card" style="margin: 0 auto;">
+                <div class="skeleton-title skeleton-bg"></div>
+                <div class="skeleton-subtitle skeleton-bg"></div>
+                <div class="skeleton-text skeleton-bg"></div>
+                <div class="skeleton-text skeleton-bg"></div>
+                <div class="skeleton-btn skeleton-bg"></div>
+            </div>
+            <!-- Skeleton 2 -->
+            <div class="skeleton-card" style="margin: 0 auto;">
+                <div class="skeleton-title skeleton-bg"></div>
+                <div class="skeleton-subtitle skeleton-bg"></div>
+                <div class="skeleton-text skeleton-bg"></div>
+                <div class="skeleton-text skeleton-bg"></div>
+                <div class="skeleton-btn skeleton-bg"></div>
             </div>
         </div>
+    </section>
 
-        <script src="js/component.js"></script>
-        <script src="js/vacant_modal.js"></script>
-    </body>
+    <div id="no-vacancies-content" style="display: none; opacity: 0; transition: opacity 0.5s ease;">
+        <section class="general-section" style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #666; font-weight: normal;">No hay vacantes por el momento</h2>
+        </section>
+
+        <section class="general-section" style="background-color: transparent;">
+            <div class="resources-grid" style="justify-content: center;">
+                <div class="resource-card" style="margin: 0 auto; max-width: 500px; width: 100%;">
+                    <div class="icons" style="color:var(--secondary);background:#E3F2FD;">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h2>¿Tienes dudas?</h2>
+
+                    <h3 style="margin: 15px 0; color: #333;">Alan Vazquez</h3>
+                    <p style="margin-bottom: 25px; color: #888; font-size: 0.9rem;">Especialista Atracción y
+                        Capacitación</p>
+
+
+                    <a href="https://wa.me/521xxxxxxxxxx?text=Hola,%20busco%20información%20sobre%20vacantes"
+                        target="_blank" class="btn-action btn-whatsapp">
+                        <div class="btn-icon-wrapper">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="btn-text">
+                            <span>Escribeme por</span>
+                            <strong>WHATSAPP</strong>
+                        </div>
+                        <i class="fas fa-comment-dots arrow-icon"></i>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="myModal" class="vacant-modal-overlay">
+        <div class="vacant-modal-content">
+            <span class="close-btn">&times;</span>
+            <h1 class="vacant-title">Polarizador</h1>
+            <h3 class="vacant-salary">$17,000</h3>
+            <p class="vacant-area">Área: Comercial</p>
+            <p class="vacant-location">Tepic, Nayarit</p>
+            <p class="vacant-resume">En GP Mobility estamos buscando tu habilidad para aplicar para la vacante de
+                polarizador...</p>
+            <button id="openModalBtn" class="vacant-apply-button">
+                <p class="vacant-apply-text"><i class="fab fa-regular fa-pen-to-square"></i> Postularme</p>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/component.js"></script>
+    <script src="js/vacant_modal.js"></script>
+    <script src="js/vacantes_logic.js"></script>
+</body>
+
 </html>

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="juntos_movemos_vidas.html" class="nav-link">Juntos Movemos Vidas</a>
                 <span class="nav-separator">|</span>
                 
-                <a href="caja_de_ahorros.html" class="nav-link">Caja de Ahorros</a>
+                <a href="caja_de_ahorro.html" class="nav-link">Caja de ahorro</a>
                 <span class="nav-separator">|</span>
                 
                 <a href="vacantes.html" class="nav-link">Vacantes</a>
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <a href="nuestra_esencia.html" class="mobile-link">Nuestra Esencia</a>
                         <a href="cultura_talento.html" class="mobile-link">Somos Cultura, Somos Talento</a>
                         <a href="juntos_movemos_vidas.html" class="mobile-link">Juntos Movemos Vidas</a>
-                        <a href="caja_de_ahorros.html" class="mobile-link">Caja de Ahorros</a>
+                        <a href="caja_de_ahorro.html" class="mobile-link">Caja de ahorro</a>
                         <a href="vacantes.html" class="mobile-link">Vacantes</a>
                     </nav>
                 </div>
@@ -70,10 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div>
                 <h3>Redes</h3>
-                <p><i class="fab fa-facebook-square"></i> GP Mobility</p>
-                <p><i class="fab fa-instagram"></i> gp_mobility</p>
-                <p><i class="fab fa-linkedin"></i> GP AUTOSERVICES</p>
-                <p><i class="fab fa-tiktok"></i> gp.mobility</p>
+                <p><a href="https://mx.linkedin.com/company/gpautoservices" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><i class="fab fa-linkedin"></i> GP AUTOSERVICES</a></p>
+                <p><a href="https://www.tiktok.com/@gp.mobility" target="_blank" style="text-decoration: none; color: inherit; cursor: pointer;"><i class="fab fa-tiktok"></i> gp.mobility</a></p>
+            </div>
+            <div>
+                <h3>Cuenta</h3>
+                <p style="cursor: pointer; color:#a30b00;" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</p>
             </div>
 
         </div>
@@ -88,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.insertAdjacentHTML("beforeend", footerHTML);
 
 
-        const menuButton = document.getElementById('mobile-menu-button');
+    const menuButton = document.getElementById('mobile-menu-button');
     const closeButton = document.getElementById('close-menu-button');
     const menuOverlay = document.getElementById('mobile-menu');
 
