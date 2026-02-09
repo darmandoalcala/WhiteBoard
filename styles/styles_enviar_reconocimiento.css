@@ -18,7 +18,7 @@ input[readonly]{background-color:#eef2f6 !important;color:#888;cursor:not-allowe
 
 
 @media (max-width:768px){.general-section{padding:30px 15px 60px 15px;}
-.general-subsection h1{font-size:1.5rem;}
+.general-subsection h1{font-size:2.5rem;}
 .valores-section{padding:25px;margin:0 15px 30px 15px;}
 .grupo-horizontal{flex-direction:column;gap:15px;}
 .campo-individual{width:100%;}

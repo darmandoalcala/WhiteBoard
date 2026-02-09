@@ -94,9 +94,15 @@
 @media (max-width: 900px) {
     .hero-grid{flex-direction:column;text-align:center;padding:0 20px;}
     .hero-text-col{text-align:center;padding-left:0;padding-right:0;}
-    .big-badge{width:150px;margin-bottom:20px;}
-    .hero-text-col h1{font-size:2rem;}
+    .big-badge{width:150px;margin-bottom:auto;}
+    .hero-text-col h1{font-size:1rem;}
+    .hero-text-col h3{font-size:0.9rem;}
+    .hero-text-col p{font-size: 0.7rem;}
     .discover-section,.general-section,.news-section{width:100%;margin:4rem 0;padding:0 1rem;}
+
+    .general-subsection h1{font-size: 3.5rem; margin-bottom: 1em;}
+    .general-subsection h2{margin-bottom: 1em;}
+    .general-subsection p{line-height: 1.6;}
 }
 
 @media (max-width: 768px) {
